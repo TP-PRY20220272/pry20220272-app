@@ -1,0 +1,23 @@
+.input-node-type-label {
+    color: #f9c74f;
+    font-family: Helvetica, Arial;
+    font-weight: bold;
+    padding: 5px;
+    margin: 0px 10px;
+    border-radius: 3px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    background-color: #277da1;
+  }
+  
+  .output-node-type-label {
+    color: #f9c74f;
+    font-family: Helvetica, Arial;
+    font-weight: bold;
+    padding: 5px;
+    margin: 0px 10px;
+    border-radius: 3px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    background-color: #f94144;
+  }
