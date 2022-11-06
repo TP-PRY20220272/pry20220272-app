@@ -1,0 +1,102 @@
+body {
+    background: #03273C;
+}
+
+Form {
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    gap: 32px;
+
+    position: absolute;
+    left: calc(50% - 450px/2 + 0.5px);
+    top: 160px;
+}
+
+.tittle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'HelveticaNeue';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 120%;
+    color: #EFF0F2;
+}
+
+.subtittle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'HelveticaNeue';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 150%;
+    color: #7E93A0;
+}
+
+.heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    gap: 12px;
+
+    width: 505px;
+    height: 85px;
+}
+
+#email {
+    background-color: #033350;
+    border-color: #033350;
+}
+
+#password {
+    background-color: #033350;
+    border-color: #033350;
+}
+
+#email::placeholder {
+    color: #ADB5BD;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 150%;
+}
+
+#password::placeholder {
+    color: #ADB5BD;
+    color: #ADB5BD;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 150%;
+}
+
+.check {
+    color: #ADB5BD;
+    font-family: 'HelveticaNeue';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 150%;
+}
+
+.forgot {
+    color: #ADB5BD;
+    font-family: 'HelveticaNeue';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 150%;
+}
+
+.button{
+    font-family: 'HelveticaNeue';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 150%;
+}
