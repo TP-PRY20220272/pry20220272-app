@@ -5,9 +5,9 @@ import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Row from 'react-bootstrap/Row';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import "./login.css"
+import "./register.css"
 
-export default function Login() {
+export default function Register() {
     const [validated, setValidated] = useState(false);
 
     const handleSubmit = (event) => {
@@ -62,7 +62,7 @@ export default function Login() {
                     <a className="forgot">¿Olvidaste tu contraseña?</a>
                 </Form.Group>
             </Row>
-            <Button className="button" type="submit">Iniciar Sesion</Button>
+            <Button className="button" type="submit">Registrarse</Button>
         </Form>
     );
 }
