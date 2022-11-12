@@ -1,4 +1,4 @@
-import { DiagramModel } from "@projectstorm/react-diagrams";
+import createEngine, { DiagramModel } from "@projectstorm/react-diagrams";
 import { InputNodeWerk } from "../../components/InputNodeWerk";
 import { OutputNodeWerk } from "../../components/OutputNodeWerk";
 import { NodeCreatorWidget } from "../../components/node-creator-widget/NodeCreatorWidget";
