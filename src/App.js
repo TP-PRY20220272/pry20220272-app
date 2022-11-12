@@ -3,7 +3,7 @@ import './App.css';
 import Login from './pages/login';
 import Register from './pages/Register/register';
 import ListProjects from './pages/project-list/project-list';
-import Diagram from './pages/diagram/diagram';
+import Diagram from './pages/diagram/Diagram';
 
 
 function App() {
