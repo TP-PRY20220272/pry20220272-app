@@ -26,6 +26,7 @@ function Search() {
 
   return (
     <div className='searchPage'>
+      <h1>Buscar Proyecto</h1>
       <Container className='card'>
         <div className='containerInput'>
           <Row>
