@@ -1,0 +1,21 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.proyects-list {
+  max-width: 1300px;
+  width: 100%;
+  margin: auto;
+
+}
+.card {
+  padding: 10px;
+  margin: 15px;
+}
+.buttonField {
+  align-items: center;
+  align-content: space-between;
+  vertical-align: middle;
+  background: #020;
+}

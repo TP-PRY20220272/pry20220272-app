@@ -1,12 +1,22 @@
 import logo from './logo.svg';
 import './App.css';
-import Login from './pages/login';
-import Register from './pages/Register/register';
-import ListProjects from './pages/project-list/project-list';
+
 import { InputNodeWerk } from "./components/InputNodeWerk";
 import { OutputNodeWerk } from "./components/OutputNodeWerk";
 import { NodeCreatorWidget } from "./components/node-creator-widget/NodeCreatorWidget";
 import createEngine, { DiagramModel } from "@projectstorm/react-diagrams";
+import {BrowserRouter, Navigate, Route, Routes} from 'react-router-dom';
+
+import Login from './pages/login/login';
+import Register from './pages/Register/register';
+import MyNavbar from './components/my-navbar/my-navbar';
+import ProjectsList from './pages/projects-list/projects-list';
+import Search from './pages/search/search';
+import CreateProject from './pages/create-project/create-project';
+import ProjectDetails from './pages/project-details/project-details';
+import RdsConfiguration from './pages/rds-configuration/rds-configuration';
+import EntitiesList from './pages/entities-list/entities-list';
+import EntityAttributes from './pages/entity-attributes/entity-attributes';
 
 function App() {
   const engine = createEngine();
@@ -17,7 +27,17 @@ function App() {
   engine.getNodeFactories().registerFactory(new OutputNodeWerk());
 
   return (
-    <NodeCreatorWidget engine={engine} />
+    <BrowserRouter>
+      <MyNavbar>
+        <Routes>
+          <Route path='/create-proyect' element={<CreateProject/>}/>
+          <Route path='/' element={<ProjectsList/>}/>
+          <Route path='/search' element={<Search/>}/>
+
+          <Route path='*' element={<Navigate replace to="/"/>}/>
+        </Routes>
+      </MyNavbar>
+    </BrowserRouter>
   );
 }
 

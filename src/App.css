@@ -3,8 +3,12 @@
   text-align: center;
 }
 
+h1 {
+  color: aliceblue;
+}
+
 .input-node {
-  border: 1px solid #277da1;
+  border: 1px solid #9fa0a0;
   border-radius: 4px;
   width: 150px;
   height: 80px;
