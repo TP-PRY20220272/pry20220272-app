@@ -3,13 +3,13 @@ import './App.css';
 import Login from './pages/login';
 import Register from './pages/Register/register';
 import ListProjects from './pages/project-list/project-list';
-import Diagram from './pages/diagram/Diagram';
+import MyDiagram from './pages/diagram/MyDiagram';
 
 
 function App() {
 
   return (
-    <Diagram />
+    <MyDiagram />
   );
 }
 
