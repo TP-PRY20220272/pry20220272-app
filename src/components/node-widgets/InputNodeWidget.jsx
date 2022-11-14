@@ -12,7 +12,7 @@ export const InputNodeWidget = (props) => {
         <div className="input-node-header-text">Input</div>
       </div>
 
-      <div className="input-node-content">Input node details</div>
+      <div className="input-node-content"><img src="../../assets/microservice.png" alt="microservicio"/></div>
 
       <PortWidget
         className="port-container right-port"
