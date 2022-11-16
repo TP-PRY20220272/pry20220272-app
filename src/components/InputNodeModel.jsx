@@ -18,5 +18,11 @@ export class InputNodeModel extends NodeModel {
         name: "out"
       })
     );
+    this.addPort(
+      new DefaultPortModel({
+        in: true,
+        name: "in"
+      })
+    );
   }
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import { PortWidget } from "@projectstorm/react-diagrams-core";
+import microservice from '../../assets/Microservice.png'
 
 export const InputNodeWidget = (props) => {
   return (
@@ -12,10 +13,18 @@ export const InputNodeWidget = (props) => {
         <div className="input-node-header-text">Input</div>
       </div>
 
-      <div className="input-node-content"><img src="../../assets/microservice.png" alt="microservicio"/></div>
+       <PortWidget
+        className="input-port-container left-port"
+        engine={props.engine}
+        port={props.node.getPort("in")}
+      >
+        <div className="input-port" />
+      </PortWidget> 
+
+      <div className="input-node-content"><img src={microservice} alt="microservicio"/></div>
 
       <PortWidget
-        className="port-container right-port"
+        className="input-port-container right-port"
         engine={props.engine}
         port={props.node.getPort("out")}
       >
