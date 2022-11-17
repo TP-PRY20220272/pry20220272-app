@@ -2,10 +2,10 @@ import React from "react";
 import "./node-type-label.css";
 
 // Nodes Labels (left panel)
-export const InputNodeTypeLabel = (props) => {
+export const MicroserviceNodeTypeLabel = (props) => {
   return (
     <div
-      className="input-node-type-label"
+      className="microservice-node-type-label"
       color={props.color}
       draggable
       onDragStart={(event) => {
@@ -20,10 +20,10 @@ export const InputNodeTypeLabel = (props) => {
   );
 };
 
-export const OutputNodeTypeLabel = (props) => {
+export const LambdaNodeTypeLabel = (props) => {
   return (
     <div
-      className="output-node-type-label"
+      className="lambda-node-type-label"
       color={props.color}
       draggable
       onDragStart={(event) => {

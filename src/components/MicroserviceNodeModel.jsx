@@ -1,10 +1,10 @@
 import { NodeModel, DefaultPortModel } from "@projectstorm/react-diagrams";
 
-export class OutputNodeModel extends NodeModel {
+export class MicroserviceNodeModel extends NodeModel {
   constructor(options) {
     super({
       ...options,
-      type: "output-node"
+      type: "microservice-node"
     });
 
     if (options) {
@@ -14,14 +14,14 @@ export class OutputNodeModel extends NodeModel {
     // Set ports
     this.addPort(
       new DefaultPortModel({
-        in: true,
-        name: "in"
+        out: true,
+        name: "out"
       })
     );
     this.addPort(
       new DefaultPortModel({
         in: true,
-        name: "out"
+        name: "in"
       })
     );
   }

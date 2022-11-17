@@ -1,6 +1,6 @@
 import createEngine, { DiagramModel } from "@projectstorm/react-diagrams";
-import { InputNodeWerk } from "../../components/InputNodeWerk";
-import { OutputNodeWerk } from "../../components/OutputNodeWerk";
+import { MicroserviceNodeWerk } from "../../components/MicroserviceNodeWerk";
+import { LambdaNodeWerk } from "../../components/LambdaNodeWerk";
 import { NodeCreatorWidget } from "../../components/node-creator-widget/NodeCreatorWidget";
 
 function MyDiagram() {
@@ -8,8 +8,8 @@ function MyDiagram() {
     engine.setModel(new DiagramModel());
   
     // Create custom node
-    engine.getNodeFactories().registerFactory(new InputNodeWerk());
-    engine.getNodeFactories().registerFactory(new OutputNodeWerk());
+    engine.getNodeFactories().registerFactory(new MicroserviceNodeWerk());
+    engine.getNodeFactories().registerFactory(new LambdaNodeWerk());
   
     return (
       <NodeCreatorWidget engine={engine} />

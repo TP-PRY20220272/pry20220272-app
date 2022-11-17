@@ -1,11 +1,11 @@
 import React from "react";
 import { CanvasWidget } from "@projectstorm/react-canvas-core";
 import { NodesTypesContainer } from "../nodes-types-container/NodesTypesContainer";
-import { InputNodeTypeLabel } from "../node-type-label/NodeTypeLabel";
-import { OutputNodeTypeLabel } from "../node-type-label/NodeTypeLabel";
+import { MicroserviceNodeTypeLabel } from "../node-type-label/NodeTypeLabel";
+import { LambdaNodeTypeLabel } from "../node-type-label/NodeTypeLabel";
 import { DiagramCanvas } from "../DiagramCanvas";
-import { InputNodeModel } from "../InputNodeModel";
-import { OutputNodeModel } from "../OutputNodeModel";
+import { MicroserviceNodeModel } from "../MicroserviceNodeModel";
+import { LambdaNodeModel } from "../LambdaNodeModel";
 import "./my-creator-widget.css";
 
 //import { DefaultPortModel } from "@projectstorm/react-diagrams";
@@ -18,8 +18,8 @@ export const NodeCreatorWidget = (props) => {
   const diagramEngine = props.engine;
 
   // Drop a node on canva on event
-  const onInputNodeDrop = (event) => {
-    const node = new InputNodeModel({ color: "#277da1" });
+  const onMicroserviceNodeDrop = (event) => {
+    const node = new MicroserviceNodeModel({ color: "#277da1" });
     const point = diagramEngine.getRelativeMousePoint(event);
     node.setPosition(point);
     node.registerListener({
@@ -32,8 +32,8 @@ export const NodeCreatorWidget = (props) => {
     forceUpdate();
   };
 
-  const onOutputNodeDrop = (event) => {
-    const node = new OutputNodeModel({ color: "#f94144" });
+  const onLambdaNodeDrop = (event) => {
+    const node = new LambdaNodeModel({ color: "#f94144" });
     const point = diagramEngine.getRelativeMousePoint(event);
     node.setPosition(point);
     node.registerListener({
@@ -55,8 +55,8 @@ export const NodeCreatorWidget = (props) => {
 
       <div className="creator-content">
         <NodesTypesContainer>
-          <InputNodeTypeLabel model={{ ports: "out" }} name="Input Node" />
-          <OutputNodeTypeLabel model={{ ports: "in" }} name="Output Node" />
+          <MicroserviceNodeTypeLabel model={{ ports: "out" }} name="Microservice" />
+          <LambdaNodeTypeLabel model={{ ports: "in" }} name="Lambda" />
         </NodesTypesContainer>
 
         <div
@@ -67,10 +67,10 @@ export const NodeCreatorWidget = (props) => {
             );
             if (data.ports === "out") {
               console.log("out ports");
-              onInputNodeDrop(event);
+              onMicroserviceNodeDrop(event);
             } else {
               console.log("in ports");
-              onOutputNodeDrop(event);
+              onLambdaNodeDrop(event);
             }
           }}
           onDragOver={(event) => {

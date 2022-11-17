@@ -1,10 +1,10 @@
 import { NodeModel, DefaultPortModel } from "@projectstorm/react-diagrams";
 
-export class InputNodeModel extends NodeModel {
+export class LambdaNodeModel extends NodeModel {
   constructor(options) {
     super({
       ...options,
-      type: "input-node"
+      type: "lambda-node"
     });
 
     if (options) {
@@ -14,14 +14,14 @@ export class InputNodeModel extends NodeModel {
     // Set ports
     this.addPort(
       new DefaultPortModel({
-        out: true,
-        name: "out"
+        in: true,
+        name: "in"
       })
     );
     this.addPort(
       new DefaultPortModel({
         in: true,
-        name: "in"
+        name: "out"
       })
     );
   }
