@@ -37,3 +37,21 @@ export const LambdaNodeTypeLabel = (props) => {
     </div>
   );
 };
+
+export const MySqlNodeTypeLabel = (props) => {
+  return (
+    <div
+      className="mysql-node-type-label"
+      color={props.color}
+      draggable
+      onDragStart={(event) => {
+        event.dataTransfer.setData(
+          "storm-diagram-node",
+          JSON.stringify(props.model)
+        );
+      }}
+    >
+      {props.name}
+    </div>
+  );
+};

@@ -3,9 +3,11 @@ import { CanvasWidget } from "@projectstorm/react-canvas-core";
 import { NodesTypesContainer } from "../nodes-types-container/NodesTypesContainer";
 import { MicroserviceNodeTypeLabel } from "../node-type-label/NodeTypeLabel";
 import { LambdaNodeTypeLabel } from "../node-type-label/NodeTypeLabel";
+import { MySqlNodeTypeLabel } from "../node-type-label/NodeTypeLabel";
 import { DiagramCanvas } from "../DiagramCanvas";
 import { MicroserviceNodeModel } from "../MicroserviceNodeModel";
 import { LambdaNodeModel } from "../LambdaNodeModel";
+import { MySqlNodeModel } from "../MySqlNodeModel";
 import "./my-creator-widget.css";
 
 //import { DefaultPortModel } from "@projectstorm/react-diagrams";
@@ -46,6 +48,20 @@ export const NodeCreatorWidget = (props) => {
     forceUpdate();
   };
 
+  const onMySqlNodeDrop = (event) => {
+    const node = new MySqlNodeModel({ color: "#B3EB8F" });
+    const point = diagramEngine.getRelativeMousePoint(event);
+    node.setPosition(point);
+    node.registerListener({
+      selectionChanged: () => {
+        console.log("OutputselectionChanged");
+      }
+    });
+    // add node to engine
+    diagramEngine.getModel().addNode(node);
+    forceUpdate();
+  };
+
   return (
     // Return code
     <div className="creator-body">
@@ -57,6 +73,7 @@ export const NodeCreatorWidget = (props) => {
         <NodesTypesContainer>
           <MicroserviceNodeTypeLabel model={{ ports: "out" }} name="Microservice" />
           <LambdaNodeTypeLabel model={{ ports: "in" }} name="Lambda" />
+          <MySqlNodeTypeLabel model={{ ports: "on" }} name="MySQL" />
         </NodesTypesContainer>
 
         <div
@@ -68,9 +85,12 @@ export const NodeCreatorWidget = (props) => {
             if (data.ports === "out") {
               console.log("out ports");
               onMicroserviceNodeDrop(event);
-            } else {
+            } else if(data.ports === "in"){
               console.log("in ports");
               onLambdaNodeDrop(event);
+            } else{
+              console.log("on ports");
+              onMySqlNodeDrop(event);
             }
           }}
           onDragOver={(event) => {
