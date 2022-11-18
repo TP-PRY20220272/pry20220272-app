@@ -66,6 +66,16 @@ function Search() {
                   <td>{proyect.id}</td>
                   <td>{proyect.title}</td>
                   <td>{proyect.description}</td>
+                  <td align='center'>
+                    <Row>
+                      <Col>
+                        <p>Ver</p>
+                      </Col>
+                      <Col>
+                        <p>Editar</p>
+                      </Col>
+                    </Row>
+                  </td>
                 </tr>
               ))}
             </tbody>

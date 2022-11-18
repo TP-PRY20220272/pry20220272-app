@@ -23,7 +23,22 @@ function MyNavbar({children}) {
       text:"Buscar Proyecto",
       icon:"bi bi-search",
       path: "/search"
-    }
+    },
+    {
+      text:"Asignar Métodos",
+      icon:"bi bi-list",
+      path: "/methods-assignment"
+    },
+    {
+      text:"Lista de Entidades",
+      icon:"bi bi-list",
+      path: "/entities-list"
+    },
+    {
+      text:"Configuración de RDS",
+      icon:"bi bi-database",
+      path: "/rds-configuration"
+    },
   ];
 
   return (

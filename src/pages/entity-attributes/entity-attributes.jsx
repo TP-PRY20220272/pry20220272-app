@@ -5,7 +5,7 @@ function EntityAttributes(props) {
   return (
     <div className='entityAttributesPage'>
       <h1>Atributos</h1>
-      <Container>
+      <Container className='card'>
         <div className='table-responsive'>
           <table className='table table-sm table-bordered'>
             <thead>

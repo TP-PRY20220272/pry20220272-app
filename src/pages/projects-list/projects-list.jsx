@@ -1,9 +1,16 @@
 import React from 'react'
 import { Button, Col, Container, Image, Row } from 'react-bootstrap'
 import { proyects } from './proyects-data'
+import { useNavigate } from "react-router-dom";
 import './projects-list.css'
 
 function ProjectsList() {
+  const navigate = useNavigate();
+  const handleViewProjectClick = () => {
+    console.log("xdd")
+    navigate('/project-details', {replace: true});
+  }
+
   return (
     <div>
       <section>
@@ -23,7 +30,7 @@ function ProjectsList() {
                       <p>{proyect.description}</p>
                     </Col>
                     <Col className='d-flex align-items-center justify-content-center'>
-                      <Button type="submit">Ver Proyecto</Button>
+                      <Button onClick={handleViewProjectClick} type="submit">Ver Proyecto</Button>
                     </Col>
                   </Row>
                 </div>

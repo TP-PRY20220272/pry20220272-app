@@ -13,7 +13,7 @@ function ProjectDetails(props) {
             <Image src={props.projectData.image} fluid></Image>
           </Col>
           <Col>
-            <h2>sdsd</h2>
+            <h2>{props.projectData.title}</h2>
             <h5>Descripción</h5>
             <p>{props.projectData.description}</p>
             <Row>

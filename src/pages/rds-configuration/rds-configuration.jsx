@@ -64,7 +64,7 @@ function RdsConfiguration() {
           }}
         />
 
-        <Button className="button" type="submit">Cargar</Button>
+        <Button className="d-grid gap-2" type="submit">Cargar</Button>
       </Container>
     </div>
   )
