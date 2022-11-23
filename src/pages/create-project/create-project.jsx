@@ -21,6 +21,7 @@ function CreateProject() {
             setProyectTitleText(e.target.value)
           }}
         />
+        <br></br>
         <h5>Descripción</h5>
         <input
           className='form-control inputProyectTitle'

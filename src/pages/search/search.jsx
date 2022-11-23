@@ -1,8 +1,8 @@
 import React from 'react'
 import { useState } from 'react'
 import { proyects } from '../projects-list/proyects-data'
-import { FaSearch } from 'react-icons/fa';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Col, Container, Row, Nav } from 'react-bootstrap'
+import { Link } from 'react-router-dom';
 
 
 function Search() {
@@ -29,27 +29,19 @@ function Search() {
       <h1>Buscar Proyecto</h1>
       <Container className='card'>
         <div className='containerInput'>
-          <Row>
-            <Col>
-              <input
-                className='form-control inputSearch'
-                value={searchText}
-                placeholder="Buscar por nombre del proyecto"
-                onChange={
-                  e => {
-                    setSearchText(e.target.value)
-                    searchProyectsByKeyword(e.target.value)
-                  }
-                }
-              />
-            </Col>
-            <Col xs={2}>
-              <button>
-                <FaSearch/>
-              </button>
-            </Col>
-          </Row>
+          <input
+            className='form-control inputSearch'
+            value={searchText}
+            placeholder="Buscar por nombre del proyecto"
+            onChange={
+              e => {
+                setSearchText(e.target.value)
+                searchProyectsByKeyword(e.target.value)
+              }
+            }
+          />
         </div>
+        <br></br>
         <div className='table-responsive'>
           <table className='table table-sm table-bordered'>
             <thead>
@@ -69,7 +61,9 @@ function Search() {
                   <td align='center'>
                     <Row>
                       <Col>
-                        <p>Ver</p>
+                        <Nav.Link as={Link} to={"/project-details"}>
+                          <p>Ver</p>
+                        </Nav.Link>
                       </Col>
                       <Col>
                         <p>Editar</p>

@@ -44,7 +44,7 @@ function MyNavbar({children}) {
   return (
     <>
     <Row>
-      <Col xs={isExpanded ? 5 : 2}>
+      <Col md="auto">
         <div className={isExpanded ? "side-nav-container" : "side-nav-container side-nav-container-NX"}>
           <div className="nav-upper">
             <div className="nav-heading">
@@ -78,9 +78,9 @@ function MyNavbar({children}) {
         </div>
       </Col>
       <Col>
-        <section>
+        <Container className='main-content'>
           <main>{children}</main>
-        </section>
+        </Container>
       </Col>
     </Row>
     

@@ -20,7 +20,7 @@ function ProjectDetails(props) {
               <Col>
                 <Row>
                   <Col xs={1}>
-                    <BsFillCalendarWeekFill/>
+                    <BsFillCalendarWeekFill color='white'/>
                   </Col>
                   <Col>
                     <p>Fecha de creación</p>
@@ -32,7 +32,7 @@ function ProjectDetails(props) {
               <Col>
                 <Row>
                   <Col xs={1}>
-                    <AiFillCheckCircle/>
+                    <AiFillCheckCircle color='white'/>
                   </Col>
                   <Col>
                     <p>Fecha de Modificación</p>
@@ -41,7 +41,7 @@ function ProjectDetails(props) {
                 </Row>
               </Col>
             </Row>
-            <Button className="button" type="submit">Ver Proyecto</Button>
+            <Button type="submit">Ver Proyecto</Button>
           </Col>
         </Row>
       </Container>

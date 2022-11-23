@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { Container, Col, Row, Button, Form } from 'react-bootstrap'
-import { Link } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
 import './methods-assignment.css'
 
