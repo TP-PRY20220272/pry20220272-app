@@ -1,15 +1,11 @@
 import React from 'react'
 import { Button, Col, Container, Image, Row } from 'react-bootstrap'
 import { proyects } from './proyects-data'
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
+
 import './projects-list.css'
 
 function ProjectsList() {
-  const navigate = useNavigate();
-  const handleViewProjectClick = () => {
-    console.log("xdd")
-    navigate('/project-details', {replace: true});
-  }
 
   return (
     <div>
@@ -21,16 +17,24 @@ function ProjectsList() {
               proyects.map((proyect, i) => (
                 <div key={i} className='card'>
                   <Row>
-                    <Col>
-                      <Image src={proyect.image} width="220px" ></Image>
+                    <Col md="auto">
+                      <Image src={proyect.image} width="210px"></Image>
                     </Col>
                     <Col>
                       <h2>{proyect.title}</h2>
+                      <br></br>
                       <h5>Descripción</h5>
                       <p>{proyect.description}</p>
-                    </Col>
-                    <Col className='d-flex align-items-center justify-content-center'>
-                      <Button onClick={handleViewProjectClick} type="submit">Ver Proyecto</Button>
+                      <div className='d-flex align-items-center justify-content-center'>
+                        <Button 
+                          as={Link} 
+                          to={`/projects/${proyect.id}`} 
+                          state={{project_data: "HERE'S THE DATA"}} 
+                          type="submit"
+                        >
+                          Ver Proyecto
+                        </Button>
+                      </div>
                     </Col>
                   </Row>
                 </div>

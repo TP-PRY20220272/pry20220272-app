@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { proyects } from '../projects-list/proyects-data'
 import { Col, Container, Row, Nav } from 'react-bootstrap'
 import { Link } from 'react-router-dom';
+import './search.css'
 
 
 function Search() {
@@ -57,11 +58,15 @@ function Search() {
                 <tr key={proyect.id}>
                   <td>{proyect.id}</td>
                   <td>{proyect.title}</td>
-                  <td>{proyect.description}</td>
+                  <td className='set-width concat'>
+                    <div>
+                      {proyect.description}
+                    </div>
+                  </td>
                   <td align='center'>
                     <Row>
                       <Col>
-                        <Nav.Link as={Link} to={"/project-details"}>
+                        <Nav.Link as={Link} to={`/projects/${proyect.id}`} state={{project_data: "HERE'S THE DATA"}}>
                           <p>Ver</p>
                         </Nav.Link>
                       </Col>

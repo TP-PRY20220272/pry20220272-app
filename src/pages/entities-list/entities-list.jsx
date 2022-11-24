@@ -11,8 +11,8 @@ function EntitiesList(props) {
           <table className='table table-sm table-bordered'>
             <thead>
               <tr>
-                <th>Entidad</th>
-                <th>Acciones</th>
+                <th className='col-sm-3'>Entidad</th>
+                <th className='col-sm-1'>Acciones</th>
               </tr>
             </thead>
             <tbody>

@@ -20,6 +20,7 @@ import EntityAttributes from './pages/entity-attributes/entity-attributes';
 import MethodsAssignment from './pages/methods-assignment/methods-assignment';
 import MethodsAssignmentConfirmation from './pages/methods-assignment/methods-assignment-confirmation';
 import { proyects } from './pages/projects-list/proyects-data';
+import { entities } from './pages/entities-list/entities-data';
 
 
 function App() {
@@ -30,145 +31,13 @@ function App() {
   engine.getNodeFactories().registerFactory(new InputNodeWerk());
   engine.getNodeFactories().registerFactory(new OutputNodeWerk());
 
-  const entities = [
-    {
-      name: "Entidad 1",
-      methods: [
-        {
-          name: "get",
-          value: true,
-        },
-        {
-          name: "post",
-          value: false,
-        },
-        {
-          name: "put",
-          value: true,
-        },
-        {
-          name: "delete",
-          value: false,
-        },
-      ],
-      attributes: [
-        {
-          name: "id",
-          data_type: "int",
-          size: "11"
-        },
-        {
-          name: "nombre",
-          data_type: "varchar",
-          size: "50"
-        },
-        {
-          name: "precio",
-          data_type: "float",
-          size: "5"
-        },
-        {
-          name: "stock",
-          data_type: "smallint",
-          size: "4"
-        },
-      ]
-    },
-    {
-      name: "Entidad 2",
-      methods: [
-        {
-          name: "get",
-          value: false,
-        },
-        {
-          name: "post",
-          value: true,
-        },
-        {
-          name: "put",
-          value: false,
-        },
-        {
-          name: "delete",
-          value: true,
-        },
-      ],
-      attributes: [
-        {
-          name: "id",
-          data_type: "int",
-          size: "11"
-        },
-        {
-          name: "nombre",
-          data_type: "varchar",
-          size: "50"
-        },
-        {
-          name: "precio",
-          data_type: "float",
-          size: "5"
-        },
-        {
-          name: "stock",
-          data_type: "smallint",
-          size: "4"
-        },
-      ]
-    },
-    {
-      name: "Entidad 3",
-      methods: [
-        {
-          name: "get",
-          value: false,
-        },
-        {
-          name: "post",
-          value: false,
-        },
-        {
-          name: "put",
-          value: false,
-        },
-        {
-          name: "delete",
-          value: false,
-        },
-      ],
-      attributes: [
-        {
-          name: "id",
-          data_type: "int",
-          size: "11"
-        },
-        {
-          name: "nombre",
-          data_type: "varchar",
-          size: "50"
-        },
-        {
-          name: "precio",
-          data_type: "float",
-          size: "5"
-        },
-        {
-          name: "stock",
-          data_type: "smallint",
-          size: "4"
-        },
-      ]
-    },
-  ]
-
   return (
     <BrowserRouter>
       <MyNavbar>
         <Routes>
           <Route path='/create-proyect' element={<CreateProject/>}/>
           <Route path='/' element={<ProjectsList/>}/>
-          <Route path='/project-details' element={<ProjectDetails projectData={proyects[0]}/>}/>
+          <Route path='/projects/:id' element={<ProjectDetails/>}/>
           <Route path='/search' element={<Search/>}/>
           <Route path='/rds-configuration' element={<RdsConfiguration/>}/>
           <Route path='/entities-list' element={<EntitiesList entities={entities}/>}/>

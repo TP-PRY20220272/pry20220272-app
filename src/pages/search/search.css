@@ -23,3 +23,15 @@ table{
     padding-bottom: 15px;
   }
 }
+
+.set-width{
+  max-width: 200px;
+}
+.concat div{
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: inherit;
+}
