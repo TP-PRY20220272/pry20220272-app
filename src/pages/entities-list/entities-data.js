@@ -2,6 +2,7 @@ import React from "react";
 
 export const entities = [
   {
+    id: 0,
     name: "Entidad 1",
     methods: [
       {
@@ -45,6 +46,7 @@ export const entities = [
     ]
   },
   {
+    id: 1,
     name: "Entidad 2",
     methods: [
       {
@@ -88,6 +90,7 @@ export const entities = [
     ]
   },
   {
+    id: 2,
     name: "Entidad 3",
     methods: [
       {

@@ -20,7 +20,7 @@ function EntitiesList(props) {
                 <tr key={entity.name}>
                   <td>{entity.name}</td>
                   <td align='center'>
-                    <Nav.Link key={entity.name} as={Link} to={"/entity-attributes"}>
+                    <Nav.Link as={Link} to={`/entity/${entity.id}/attributes`}>
                       <p>Ver</p>
                     </Nav.Link>
                   </td>

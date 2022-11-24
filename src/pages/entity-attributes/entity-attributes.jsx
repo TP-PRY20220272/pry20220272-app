@@ -1,7 +1,10 @@
 import React from 'react'
 import { Container } from 'react-bootstrap'
+import { entities } from '../entities-list/entities-data'
+import { useParams } from 'react-router-dom';
 
-function EntityAttributes(props) {
+function EntityAttributes() {
+  const id = useParams().id
   return (
     <div className='entityAttributesPage'>
       <h1>Atributos</h1>
@@ -16,7 +19,7 @@ function EntityAttributes(props) {
               </tr>
             </thead>
             <tbody>
-              {props.attributes && props.attributes.map((attribute)=>(
+              {entities[id].attributes && entities[id].attributes.map((attribute)=>(
                 <tr key={attribute.name}>
                   <td>{attribute.name}</td>
                   <td>{attribute.data_type}</td>

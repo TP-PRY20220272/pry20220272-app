@@ -43,7 +43,7 @@ function App() {
           <Route path='/entities-list' element={<EntitiesList entities={entities}/>}/>
           <Route path='/methods-assignment' element={<MethodsAssignment entities={entities}/>}/>
           <Route path='/methods-assignment-confirmation' element={<MethodsAssignmentConfirmation entities={entities}/>}/>
-          <Route path='/entity-attributes' element={<EntityAttributes attributes={entities[0].attributes}/>}/>
+          <Route path='/entity/:id/attributes' element={<EntityAttributes/>}/>
 
           <Route path='*' element={<Navigate replace to="/"/>}/>
         </Routes>

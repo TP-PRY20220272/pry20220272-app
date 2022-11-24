@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button, Col, Container, Image, Row } from 'react-bootstrap'
-import { Link, useParams, useLocation} from 'react-router-dom';
+import { useParams, useLocation} from 'react-router-dom';
 import { BsFillCalendarWeekFill } from 'react-icons/bs';
 import {AiFillCheckCircle} from 'react-icons/ai'
 import { proyects } from '../projects-list/proyects-data';
