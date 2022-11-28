@@ -1,5 +1,5 @@
 body {
-    background: #03273C;
+  background: #03273C;
 }
 
 Form {
@@ -17,8 +17,6 @@ Form {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'HelveticaNeue';
-    font-style: normal;
     font-weight: 400;
     font-size: 36px;
     line-height: 120%;
@@ -29,8 +27,6 @@ Form {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'HelveticaNeue';
-    font-style: normal;
     font-weight: 400;
     font-size: 20px;
     line-height: 150%;
@@ -49,12 +45,12 @@ Form {
 }
 
 #email {
-    background-color: #033350;
+    background-color: #ffffff;
     border-color: #033350;
 }
 
 #password {
-    background-color: #033350;
+    background-color: #ffffff;
     border-color: #033350;
 }
 
@@ -76,26 +72,20 @@ Form {
 }
 
 .check {
-    color: #17c71f;
-    font-family: 'HelveticaNeue';
-    font-style: normal;
+    color: #ffffff;
     font-weight: 400;
     font-size: 20px;
     line-height: 150%;
 }
 
 .forgot {
-    color: #ADB5BD;
-    font-family: 'HelveticaNeue';
-    font-style: normal;
+    color: #ffffff;
     font-weight: 400;
     font-size: 20px;
     line-height: 150%;
 }
 
 .button{
-    font-family: 'HelveticaNeue';
-    font-style: normal;
     font-weight: 400;
     font-size: 20px;
     line-height: 150%;

@@ -19,7 +19,9 @@ import EntitiesList from './pages/entities-list/entities-list';
 import EntityAttributes from './pages/entity-attributes/entity-attributes';
 import MethodsAssignment from './pages/methods-assignment/methods-assignment';
 import MethodsAssignmentConfirmation from './pages/methods-assignment/methods-assignment-confirmation';
-import { proyects } from './pages/projects-list/proyects-data';
+import Main from './Main';
+import RequireAuth from './components/RequireAuth'
+
 import { entities } from './pages/entities-list/entities-data';
 
 
@@ -32,23 +34,30 @@ function App() {
   engine.getNodeFactories().registerFactory(new OutputNodeWerk());
 
   return (
-    <BrowserRouter>
-      <MyNavbar>
-        <Routes>
-          <Route path='/create-proyect' element={<CreateProject/>}/>
-          <Route path='/' element={<ProjectsList/>}/>
-          <Route path='/projects/:id' element={<ProjectDetails/>}/>
-          <Route path='/search' element={<Search/>}/>
-          <Route path='/rds-configuration' element={<RdsConfiguration/>}/>
-          <Route path='/entities-list' element={<EntitiesList entities={entities}/>}/>
-          <Route path='/methods-assignment' element={<MethodsAssignment entities={entities}/>}/>
-          <Route path='/methods-assignment-confirmation' element={<MethodsAssignmentConfirmation entities={entities}/>}/>
-          <Route path='/entity/:id/attributes' element={<EntityAttributes/>}/>
+    <Routes>
+      <Route path='/' element={<Main/>}>
 
-          <Route path='*' element={<Navigate replace to="/"/>}/>
-        </Routes>
-      </MyNavbar>
-    </BrowserRouter>
+        {/* PUBLIC ROUTES */}
+        <Route path='login' element={<Login/>}/>
+
+        {/* PROTECTED ROUTES */}
+        <Route element={<RequireAuth/>}>
+          <Route path='projects' element={<ProjectsList/>}/>
+          <Route path='create-proyect' element={<CreateProject/>}/>
+          <Route path='projects/:id' element={<ProjectDetails/>}/>
+          <Route path='search' element={<Search/>}/>
+          <Route path='rds-configuration' element={<RdsConfiguration/>}/>
+          <Route path='entities-list' element={<EntitiesList entities={entities}/>}/>
+          <Route path='methods-assignment' element={<MethodsAssignment entities={entities}/>}/>
+          <Route path='methods-assignment-confirmation' element={<MethodsAssignmentConfirmation entities={entities}/>}/>
+          <Route path='entity/:id/attributes' element={<EntityAttributes/>}/>
+        </Route>
+
+        {/* DEFAULT REDIRECTION IF UNKNOWN ROUTE */}
+        <Route path='*' element={<Navigate replace to="/"/>}/>
+
+      </Route>
+    </Routes>
   );
 }
 

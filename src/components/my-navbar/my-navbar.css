@@ -140,11 +140,3 @@
   background-color: gray;
 }
 
-h5, h2, p, th, td {
-  color: white;
-}
-.card{
-  padding-bottom: 15px;
-  background-color: #032d46;
-  border: 1px solid #053d5e;
-}
